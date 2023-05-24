@@ -1,2 +1,3 @@
 # LRS
- all the LRS
+BSc Thesis project
+
