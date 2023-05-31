@@ -1,4 +1,4 @@
-.nav {
+nav {
     position: absolute;
     top: 0;
     left: 0;
@@ -13,8 +13,9 @@
     background: rgb(125, 197, 141);
     transition: top 0.3s;
     border-bottom:8px solid white;
+    margin-bottom: 30px;
   }
-  .nav > img {
+  nav > img {
     justify-content: space-between;
     width: 170px;
     height: 70px;

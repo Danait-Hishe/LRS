@@ -1,89 +1,9 @@
-.nav{
-    height: 60px;
-    background-color: rgb(125, 197, 141);
-    display:flex;
-    justify-content: space-between;
-    padding: 0px 20px;
-    color: black;
-}
-.logo{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    cursor: pointer;
-}
-.nav i{
-    font-size: 23px;
-    color: black;
-}
-.sidebar-conatiner{
-    background-color: rgb(125, 197, 141);
-    color: black;
-    width: 25%;
-    height: 10px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    margin-top: 10%;
-}
-.sidebar-conatiner::-webkit-scrollbar{
-    display: none; 
-}
-.nav-option{
-    display: flex;
-    background-color: rgb(125, 197, 141);
-    color: black;
-    align-items: center;
-    padding: 0px 15 px;
-    gap: 5% ;
-    width: 15%;
-    height: 290px;
-    font-size: larger;
-    
-}
-.nav-option i{
-    color: black;
-    font-size: 20px ;
-}
-.nav-option:hover, .nav-option:hover i{
-    background-color: white ;
-    color: black;
-    cursor: pointer;
-}
-@media screen and (min-width: 768px){
-    .navCollaps {
-        width:10%;
-    }
-    .navCollaps .nav-option h3{
-        display: none;
-    }
-    .navCollaps .nav-option{
-        padding: 28px;
-    }
-    .smallDeviceIcon{
-        display: none;
-    }
-}
-@media screen and (max-width: 767px){
-    .largDeviceIcon{
-        display: none;
-    }
-    .sidebar-container{
-        display: none;
-    }
-    .smallNav{
-        display: block;
-    }
-    .logo img{
-        display: none;
-    }
-}
 *{
     box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .table-wrapper{
+    margin-top: 10%;
     width: 100%;
 }
 .table{
@@ -94,8 +14,6 @@
     box-shadow: 0px 10px 10px #ccc;
     border-radius: 10px;
     white-space: nowrap;
-    width: 100em;
-    max-width: 80%;
     margin: auto;
     overflow-x:auto ;
 }
@@ -126,4 +44,19 @@
 }
 .delete-btn{
     color: #e10d05;
+}
+
+.text-end{
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: end;
+    margin-right: 50px;
+}
+.btn {
+    text-decoration: none;
+}
+.cont{
+    display: flex;
+    flex-direction: row;
 }
