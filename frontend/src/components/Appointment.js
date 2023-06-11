@@ -13,7 +13,7 @@ export default function Appointment() {
       }, []);
 
       const fetchAppointment = () => {
-        fetch('/api/appointments')
+        fetch('http://localhost:5000/appointment')
           .then((response) => response.json())
           .then((data) => {
             setAppointment(data);
