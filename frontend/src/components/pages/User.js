@@ -31,7 +31,7 @@ export default function User() {
           <thead>
             <tr>
               {columns.map((c, i) => (
-                <th key={i}>{c}asdf</th>
+                <th key={i}>{c}</th>
               ))}
               <th>Action</th>
             </tr>

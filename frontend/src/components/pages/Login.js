@@ -89,7 +89,6 @@ export default function Login() {
           />
           <br />
           <button onClick={handlesubmit}>Login</button>
-             {error?<label name="error" style={{color:red}}  >{error}</label>:null}   
           {/* <a href="/Admin">user</a> */}
         </div>
       </form>

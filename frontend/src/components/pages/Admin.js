@@ -89,6 +89,10 @@ function Admin() {
       </Link>;
     }
   };
+  useEffect (()=>{
+    getAllUser();
+    getAllCustomer();
+  },[]);
 
   return (
     <Formik
@@ -288,7 +292,7 @@ function Admin() {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {data.map((i) => (
+                    {customerData.map((i) => (
                       <TableRow key={i.idNo}>
                         <TableCell>{i.fullName}</TableCell>
                         <TableCell>{i.city}</TableCell>
