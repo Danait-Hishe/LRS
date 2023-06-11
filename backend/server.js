@@ -18,7 +18,7 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions))
-app.use('/',router)
+app.use('/user',router)
 
 const dbOptions = {useNewUrlParser:true, useUnifiedTopology:true}
 mongoose.set("strictQuery",true)

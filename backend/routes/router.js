@@ -1,18 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const UserSchema = require("../model/UserSchema");
 const ParcelSchema = require("../models/parcelSchema");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 const session = require("express-session");
 const AppointmentSchema = require("../models/AppointmentSchema");
+const UserSchema = require("../models/UserSchema");
 
-app.use(
-  session({
-    secret: "mysecretkey",
-    resave: false,
-    saveUninitialized: true,
-  })
-);
+// app.use(
+//   session({
+//     secret: "mysecretkey",
+//     resave: false,
+//     saveUninitialized: true,
+//   })
+// );
 
 router.post("/parcel", async (req, res) => {
   const {
@@ -95,7 +95,7 @@ router.get("/search", async (req, res) => {
 });
 
 router.post("/createUser", async (req, res) => {
-  const { fullName, phoneNumber, username, password } = req.body;
+  const { fullName, phoneNumber, username, password,role } = req.body;
   console.log(req.body);
   try {
     let user = await UserSchema.findOne({
@@ -111,6 +111,7 @@ router.post("/createUser", async (req, res) => {
       phoneNumber: phoneNumber,
       username: username,
       password: encryptPassword,
+      role:role,
     });
     console.log(user);
     await user.save();
@@ -126,6 +127,7 @@ router.post("/createUser", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
+  console.log("logged",req.body);
 
   try {
     const user = await UserSchema.findOne({ username });
@@ -136,12 +138,12 @@ router.post("/login", async (req, res) => {
     if (!isPasswordValid) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
-    req.session.user = user;
-
-    res.json({ message: "Login successful" });
+    //req.session.user = user;
+    console.log({ message: "Login successful", user });
+    return res.send({ message: "Login successful", user });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Server error" });
+    return res.status(500).json({ message: "Server error" });
   }
 });
 
@@ -206,3 +208,4 @@ router.get("/appointment", (req, res) => {
       res.status(500).json({ error: "Error retrieving appointment" });
     });
 });
+module.exports = router;
