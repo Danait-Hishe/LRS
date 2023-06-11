@@ -40,3 +40,10 @@
     margin-top:10%;
     font-size: x-large;
 }
+.errorMessage {
+    font-size: x-large;
+    margin-top: 10%;
+    text-align: left;
+    margin-left: 20%;
+    color: red;
+}

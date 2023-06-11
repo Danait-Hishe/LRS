@@ -3,18 +3,23 @@ import Image from '../images/logo.jpeg';
 import "./login.css";
 import Admin from "../pages/Admin";
 import User from "../pages/User"
-
+import { useNavigate } from "react-router-dom";
+import { colors } from "@mui/material";
+import { red } from "@mui/material/colors";
 export default function Login() {
   const [user, setUser] = useState();
   const [username, setUsername] = useState("");
   const [password,setPassword] = useState("");
+  const [credentialError, setCredentialError] = useState('');
+  const [error,setError]=useState();
 
-  
+    const navigate = useNavigate();
   const handlesubmit = async(e) => {
-    e.preventDefualt();
+    e.preventDefault();
     console.log("logged")
-
-
+//const navigate = useNavigate();
+    let resFromAPI = {};
+    let statusCode ;
     await fetch("http://localhost:5000/user/login", {
       method: "POST",
       headers: {
@@ -25,14 +30,29 @@ export default function Login() {
         password,
       }),
     })
-    .then((response) => response.json())
+    .then((response) => {
+      resFromAPI = response.json();
+      statusCode = response.status;
+      return resFromAPI;
+    })
     .then((data) => {
-      //setUser({ username, role: data.role });
-      console.log("@#$1234Yonatan*")
-      if(data.user.role == "admin"){
-           return (Admin);
-      }else {
-        return (User);
+      console.log("status code:",statusCode,data);
+      if(statusCode == 200){
+        setCredentialError("")
+        //alert(data.message)
+        console.log("response from back:",resFromAPI);
+        //setUser({ username, role: data.role });
+        console.log("@#$1234Yonatan*")
+        if(data.user.role == "admin"){
+          console.log("reached here ; it's an admin");
+          navigate("/admin");
+        }else if(data.user.role == "user") {
+          navigate("/user")
+        }else{
+          setError("Invalid role");
+        }
+      }else{
+        setError(data.message)
       }
     })
     .catch((error) => console.error(error));
@@ -69,6 +89,7 @@ export default function Login() {
           />
           <br />
           <button onClick={handlesubmit}>Login</button>
+             {error?<label name="error" style={{color:red}}  >{error}</label>:null}   
           {/* <a href="/Admin">user</a> */}
         </div>
       </form>

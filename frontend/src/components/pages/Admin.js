@@ -32,7 +32,7 @@ function Admin() {
   const [userData, setUserData] = useState([]);
 
   const logOut = () => {
-    fetch("http://localhost:5000/logout", {
+    fetch("http://localhost:5000/user/logout", {
       method: "POST",
     })
       .then(() => {
@@ -43,7 +43,7 @@ function Admin() {
 
 
   const getAllCustomer = () => {
-    fetch("http://localhost:5000/getAllCustomer", {
+    fetch("http://localhost:5000/user/getAllCustomer", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -54,7 +54,7 @@ function Admin() {
   };
 
   const getAllUser = () => {
-    fetch("http://localhost:5000/getAllUser", {
+    fetch("http://localhost:5000/user/getAllUser", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -66,7 +66,7 @@ function Admin() {
 
   const deleteUser = (idNo, fullName) => {
     if (window.confirm(`Are you sure you want to delete ${fullName}`)) {
-      fetch("http://localhost:5000/deleteUser", {
+      fetch("http://localhost:5000/user/deleteUser", {
         method: "POST",
         crossDomain: true,
         headers: {
@@ -100,7 +100,7 @@ function Admin() {
       }}
       onSubmit={(values, actions) => {
         axios
-          .post("http://localhost:5000/createUser", values)
+          .post("http://localhost:5000/user/createUser", values)
           .then((response) => {
             const data = response.data;
             console.log(data);
