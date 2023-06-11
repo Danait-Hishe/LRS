@@ -52,11 +52,8 @@
     margin-bottom: 10px;
     justify-content: end;
     margin-right: 50px;
+    backgroundColor:rgb(125, 197, 141),
 }
-.btn {
-    text-decoration: none;
-}
-.cont{
-    display: flex;
-    flex-direction: row;
+.text-end button{
+    backgroundColor:rgb(125, 197, 141),
 }

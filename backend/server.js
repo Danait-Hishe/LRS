@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require ('mongoose')
 const cors = require('cors')
 const bodyParser = require ('body-parser')
+const router = require ('../backend/routes/router')
 
 require('dotenv/config')
 
@@ -17,7 +18,7 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions))
-//app.use('/',router)
+app.use('/',router)
 
 const dbOptions = {useNewUrlParser:true, useUnifiedTopology:true}
 mongoose.set("strictQuery",true)

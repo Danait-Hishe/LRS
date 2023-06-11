@@ -21,7 +21,7 @@ export default function User() {
       <Navbar />
       <div className="table-wrapper">
         <div className="text-end">
-          <button className="bg-blue-700">
+          <button >
             <Link to="/create" className="btn">
               Register parcel
             </Link>
@@ -33,20 +33,15 @@ export default function User() {
               {columns.map((c, i) => (
                 <th key={i}>{c}asdf</th>
               ))}
-              <th>asdf</th>
-              <th>asdf</th>
-              <th>asdf</th>
-              <th>asdf</th>
-
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
             {records.map((item) => (
               <tr key={item}>
-                <td>{item.name}asdf</td>
-                <td>{item.city}asdf</td>
-                <td>{item.kebele}asdfasd</td>
+                <td>{item.fulName}</td>
+                <td>{item.city}</td>
+                <td>{item.kebele}</td>
                 <td>
                   <Link
                     to={`/update/${item.id}`}

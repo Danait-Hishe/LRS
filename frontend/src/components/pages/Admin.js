@@ -1,5 +1,4 @@
 import {
-  Typography,
   Button,
   Table,
   TableBody,
@@ -33,9 +32,15 @@ function Admin() {
   const [userData, setUserData] = useState([]);
 
   const logOut = () => {
-    window.localStorage.clear();
-    window.location.href = "/";
+    fetch("http://localhost:5000/logout", {
+      method: "POST",
+    })
+      .then(() => {
+        setUser(null);
+      })
+      .catch((error) => console.error(error));
   };
+
 
   const getAllCustomer = () => {
     fetch("http://localhost:5000/getAllCustomer", {
@@ -132,16 +137,14 @@ function Admin() {
           <div>
             <NavbarAdmin />
           </div>
-          <Typography variant="h2" align="center" fontFamily={"Helvetica Neue"}>
-            Admin Dashboard
-          </Typography>
           <div>
             <Button
               sx={{
                 marginRight: 10,
-                marginTop: 2,
-                marginLeft: 50,
+                marginTop: 20,
+                marginLeft: 5,
                 marginBottom: 5,
+                backgroundColor:"rgb(125, 197, 141)",
               }}
               onClick={() => setShow(!show)}
               variant="contained"
@@ -152,14 +155,15 @@ function Admin() {
             {show && (
               <>
                 <div
-                  className="form1"
-                  style={{ marginTop: 35, marginLeft: "30%", marginBottom: 20 }}
+                  className="form-container"
+                  style={{ marginTop: 250, marginBottom: 20,marginLeft:300}}
+
                 >
                   <h1>Add a User</h1>
-                  <form autoComplete="off" onSubmit={handleSubmit}>
+                  <form autoComplete="off" onSubmit={handleSubmit} >
                     <label>Full Name</label>
-                    <br />
                     <input
+                      style={{ marginBottom: 5,marginLeft:30,width:220}}
                       id="fullName"
                       type="text"
                       placeholder="Enter your Full Name"
@@ -171,6 +175,7 @@ function Admin() {
                         errors.fullName && touched.fullName ? "error" : ""
                       }
                     />
+                    <br/>
                     <ErrorMessage
                       name="fullName"
                       style={{ color: "red", fontSize: "small" }}
@@ -178,8 +183,8 @@ function Admin() {
                       component="span"
                     />
                     <label>Phone Number</label>
-                    <br />
                     <input
+                      style={{ marginBottom: 5,marginLeft:20,width:200}}
                       id="phoneNumber"
                       type="text"
                       placeholder="Enter your Phone Number"
@@ -191,6 +196,7 @@ function Admin() {
                         errors.phoneNumber && touched.phoneNumber ? "error" : ""
                       }
                     />
+                    <br/>
                     <ErrorMessage
                       name="phoneNumber"
                       style={{ color: "red", fontSize: "small" }}
@@ -198,8 +204,8 @@ function Admin() {
                       component="span"
                     />
                     <label>Username</label>
-                    <br />
                     <input
+                      style={{ marginBottom: 5,marginLeft:30,width:220}}
                       id="username"
                       type="text"
                       placeholder="Enter your username"
@@ -220,6 +226,7 @@ function Admin() {
                     <br />
                     <label>Password</label>
                     <input
+                      style={{ marginBottom: 5,marginLeft:30,width:220}}
                       id="password"
                       type="password"
                       placeholder="Enter your Password"
@@ -238,8 +245,8 @@ function Admin() {
                       component="span"
                     />
                     <br />
-                    <div className="login">
-                      <button type="submit" disabled={isSubmitting}>
+                    <div className="log">
+                      <button type="submit" disabled={isSubmitting} style={{ marginBottom: 5,marginLeft:30,width:150}}>
                         Create
                       </button>
                     </div>
@@ -252,9 +259,10 @@ function Admin() {
             <Button
               sx={{
                 marginRight: 10,
-                marginTop: 2,
-                marginLeft: 50,
+                marginTop: 40,
+                marginLeft: 5,
                 marginBottom: 5,
+                backgroundColor:"rgb(125, 197, 141)",
               }}
               onClick={() => setShowCustomer(!showCustomer)}
               variant="contained"
@@ -296,14 +304,15 @@ function Admin() {
             <Button
               sx={{
                 marginRight: 10,
-                marginTop: 2,
-                marginLeft: 50,
+                marginTop: 10,
+                marginLeft: 5,
                 marginBottom: 5,
+                backgroundColor:"rgb(125, 197, 141)",
               }}
               onClick={() => setShowUser(!showUser)}
               variant="contained"
             >
-              {showUser === true ? "^" : "↓"} See Admin Data
+              {showUser === true ? "^" : "↓"} See User Data
             </Button>
             {showUser && (
               <TableContainer
@@ -354,9 +363,10 @@ function Admin() {
               onClick={logOut}
               sx={{
                 marginRight: 3,
-                marginTop: 2,
-                marginLeft: 50,
+                marginTop: 20,
+                marginLeft: 5,
                 marginBottom: 5,
+                backgroundColor:"rgb(125, 197, 141)",
               }}
               variant="contained"
             >
