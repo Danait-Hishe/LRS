@@ -41,7 +41,7 @@ function Navbar() {
               <li key={parcel._id}>{parcel.fullName}</li>
             ))}
           </ul>
-          <Link to="/">Home</Link>
+          <Link to="/" >Home</Link>
           <Link to="/User">Dashboard</Link>
           <Link>
             <button

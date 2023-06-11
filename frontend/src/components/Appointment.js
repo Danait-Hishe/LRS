@@ -1,5 +1,6 @@
 import React from 'react';
 import {useEffect , useState} from 'react';
+import '../components/Appointment.css'
 
 export default function Appointment() {
 
@@ -43,7 +44,7 @@ export default function Appointment() {
       };
     
       return (
-        <div>
+        <div className='appointment' >
             <div className="header">
           <img src={Image} alt="logo" />
           <a href="/">Home </a>
@@ -60,6 +61,7 @@ export default function Appointment() {
               type="text"
               placeholder="Appointment Time"
               value={appointmentTime}
+              style={{marginTop:'10%'}}
               onChange={(e) => setAppointmentTime(e.target.value)}
             />
             <button type="submit">Create Appointment</button>

@@ -1,9 +1,9 @@
-.login{
-    background-image: url(../images/signIn.jpg);
+.appointment{
+    background-image: url(../components/images/signIn.jpg);
     background-size: cover;
     height: 700px;
 }
-.form-container1{
+.app-container{
     width:30%;
     height: 500px;
     background-color: rgb(240, 252, 252);
@@ -16,27 +16,25 @@
     margin-left: 35%;
     text-align: center;
 }
-
-.login label{
+.appointment label{
     font-size: x-large;
     margin-top: 10%;
-    text-align: left;
-    margin-left: 20%;
 }
-.login input{
+.appointment input{
     width: 60%;
     margin-left: 20%;
     border-radius: 8px;
     box-shadow: 0 0 15px 1px rgba(0,0,0,0.4);
-    height: 8%;
-    font-size: large;
+    height: 10%;
+    margin-top: 20%;
     text-align: center;
+    font-size: large;
 }
-.login button{
+.appointment button{
     background-color: rgb(125, 197, 141);
-    width: 20%;
-    margin-left: 40%;
+    width: 40%;
+    margin-left: 30%;
     height: 10%;
     margin-top:10%;
-    font-size: x-large;
+    font-size: large;
 }

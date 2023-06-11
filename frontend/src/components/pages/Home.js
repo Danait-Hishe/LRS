@@ -1,5 +1,5 @@
 import React from "react";
-//import Image from '../images/landing.jpg';
+import Image from '../images/logo.jpeg';
 import "./Home.css";
 import { Link } from "react-router-dom";
 
@@ -25,9 +25,11 @@ export default function Home() {
       </div>
       <div className="form-container" style={{ float: "left" }}>
         <h2>About Us</h2>
+        <p>Land registration is any of various systems by which matters concerning ownership, possession, or other rights in land are formally recorded (usually with a government agency or department) to provide evidence of title, facilitate transactions, and prevent unlawful disposal. The information recorded and the protection provided by land registration varies widely by jurisdiction.</p>
       </div>
       <div className="form-container" style={{ float: "left" }}>
-        <h2>Contact</h2>
+        <h2>Address</h2>
+        <p style={{ marginTop:'15px' }}>DebreBerhan,Behind Ayu Primary Hospital</p>
       </div>
     </div>
   );

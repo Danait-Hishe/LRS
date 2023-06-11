@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Image from '../images/logo.jpeg';
 import "./login.css";
 
 export default function Login() {
@@ -54,7 +55,7 @@ export default function Login() {
           />
           <br />
           <button type="submit">Login</button>
-          <a href="/Admin">user</a>
+          {/* <a href="/Admin">user</a> */}
         </div>
       </form>
     </div>
