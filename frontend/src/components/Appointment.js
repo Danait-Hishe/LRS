@@ -14,7 +14,7 @@ export default function Appointment() {
       }, []);
 
       const fetchAppointment = () => {
-        fetch('http://localhost:5000/appointment')
+        fetch('http://localhost:5000/user/appointment')
           .then((response) => response.json())
           .then((data) => {
             setAppointment(data);
@@ -25,7 +25,7 @@ export default function Appointment() {
       };
 
       const createAppointment = () => {
-        fetch('http://localhost:5000/appointment', {
+        fetch('http://localhost:5000/user/appointment', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -84,11 +84,7 @@ function Admin() {
           alert(data.data);
           getAllUser();
         });
-    } else {
-      <Link to="/create" className="btn btn-primary">
-        Register parcel
-      </Link>;
-    }
+    } 
   };
   useEffect (()=>{
     getAllUser();
@@ -292,16 +288,46 @@ function Admin() {
                   <TableHead sx={{ backgroundColor: "rgb(125, 197, 141)" }}>
                     <TableRow>
                       <TableCell>FullName</TableCell>
-                      <TableCell>city</TableCell>
+                      <TableCell>Current-city</TableCell>
                       <TableCell>kebele</TableCell>
+                      <TableCell>Area</TableCell>
+                      <TableCell>Subcity</TableCell>
+                      <TableCell>MartialStatus</TableCell>
+                      <TableCell>Gender</TableCell>
+                      <TableCell>Registration Date</TableCell>
+                      <TableCell>ParcelCode</TableCell>
+                      <TableCell>Land-Level</TableCell>
+                      <TableCell>Service Type</TableCell>
+                      <TableCell>North Boundary</TableCell>
+                      <TableCell>South Boundary</TableCell>
+                      <TableCell>East Boundary</TableCell>
+                      <TableCell>West Boundary</TableCell>
+                      <TableCell>Tenure Type</TableCell>
+                      <TableCell>Encumbrance</TableCell>
+                      <TableCell>Occupation</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {customerData.map((i) => (
+                    {data.map((i) => (
                       <TableRow key={i.idNo}>
                         <TableCell>{i.fullName}</TableCell>
-                        <TableCell>{i.city}</TableCell>
+                        <TableCell>{i.currentCity}</TableCell>
                         <TableCell>{i.kebele}</TableCell>
+                        <TableCell>{i.area}</TableCell>
+                        <TableCell>{i.subCity}</TableCell>
+                        <TableCell>{i.martialStatus}</TableCell>
+                        <TableCell>{i.gender}</TableCell>
+                        <TableCell>{i.registrationDate}</TableCell>
+                        <TableCell>{i.parcelCode}</TableCell>
+                        <TableCell>{i.landLevel}</TableCell>
+                        <TableCell>{i.serviceType}</TableCell>
+                        <TableCell>{i.northBoundary}</TableCell>
+                        <TableCell>{i.southBoundary}</TableCell>
+                        <TableCell>{i.eastBoundary}</TableCell>
+                        <TableCell>{i.westBoundary}</TableCell>
+                        <TableCell>{i.tenureType}</TableCell>
+                        <TableCell>{i.encumbrance}</TableCell>
+                        <TableCell>{i.occupation}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>

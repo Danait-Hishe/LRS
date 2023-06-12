@@ -185,8 +185,8 @@ router.post("/appointment", (req, res) => {
   const { customerName, appointmentTime } = req.body;
 
   const appointment = new AppointmentSchema({
-    customerName,
-    appointmentTime,
+    customerName: customerName,
+    appointmentTime:appointmentTime
   });
 
   appointment

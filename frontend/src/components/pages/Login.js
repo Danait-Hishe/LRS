@@ -87,7 +87,7 @@ export default function Login() {
           />
           <br />
           <button onClick={handlesubmit}>Login</button>
-          {/* <a href="/Admin">user</a> */}
+          <a href="/Admin">user</a>
         </div>
       </form>
     </div>

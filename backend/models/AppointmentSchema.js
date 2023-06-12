@@ -5,8 +5,12 @@ const Schema = mongoose.Schema;
 
 
 const appointmentSchema = new Schema({
-    customerName: String,
-    appointmentTime: String,
+    customerName:{
+      type:String
+    },
+    appointmentTime: {
+      type:Number
+    }
   });
 
 module.exports = mongoose.model("Appointment",appointmentSchema)
