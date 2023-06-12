@@ -10,7 +10,7 @@ export default function User() {
   const [records, setRecords] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    axios.get("http://localhost:5000/getAllCustomers").then((res) => {
+    axios.get("http://localhost:5000/user/getAllCustomers").then((res) => {
       setColumns(Object.keys(res.data[0]));
       setRecords(res.data);
     });
@@ -82,7 +82,7 @@ export default function User() {
     const confirm = window.confirm("Do you want to delete?");
     if (confirm) {
       axios
-        .delete("http://localhost:5000/getAllCustomers/" + id)
+        .delete("http://localhost:5000/user/getAllCustomers/" + id)
         .then((res) => {
           alert("Data has deleted");
           navigate("/user");

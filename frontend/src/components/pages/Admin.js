@@ -163,7 +163,7 @@ function Admin() {
               <>
                 <div
                   className="form-container3"
-                  style={{ marginTop:100,marginBottom: 20,marginLeft:300}}
+                  style={{ marginTop:60,marginBottom: 20,marginLeft:300}}
 
                 >
                   <h1>Add a User</h1>
