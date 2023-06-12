@@ -13,6 +13,7 @@ import axios from "axios";
 import * as yup from "yup";
 import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
 import NavbarAdmin from "../NavbarAdmin";
+import './Admin.css'
 
 const validationSchema = yup.object({
   username: yup.string().required("Enter your Username"),
@@ -146,9 +147,11 @@ function Admin() {
               sx={{
                 marginRight: 10,
                 marginTop: 20,
-                marginLeft: 5,
+                marginLeft: 15,
                 marginBottom: 5,
                 backgroundColor:"rgb(125, 197, 141)",
+                color: "black",
+                fontSize:"large"
               }}
               onClick={() => setShow(!show)}
               variant="contained"
@@ -159,8 +162,8 @@ function Admin() {
             {show && (
               <>
                 <div
-                  className="form-container"
-                  style={{ marginTop: 250, marginBottom: 20,marginLeft:300}}
+                  className="form-container3"
+                  style={{ marginTop:100,marginBottom: 20,marginLeft:300}}
 
                 >
                   <h1>Add a User</h1>
@@ -263,10 +266,12 @@ function Admin() {
             <Button
               sx={{
                 marginRight: 10,
-                marginTop: 40,
-                marginLeft: 5,
+                marginTop: 15,
+                marginLeft: 15,
                 marginBottom: 5,
                 backgroundColor:"rgb(125, 197, 141)",
+                color: "black",
+                fontSize:"large"
               }}
               onClick={() => setShowCustomer(!showCustomer)}
               variant="contained"
@@ -309,9 +314,11 @@ function Admin() {
               sx={{
                 marginRight: 10,
                 marginTop: 10,
-                marginLeft: 5,
+                marginLeft: 15,
                 marginBottom: 5,
                 backgroundColor:"rgb(125, 197, 141)",
+                color: "black",
+                fontSize:"large"
               }}
               onClick={() => setShowUser(!showUser)}
               variant="contained"
@@ -368,9 +375,11 @@ function Admin() {
               sx={{
                 marginRight: 3,
                 marginTop: 20,
-                marginLeft: 5,
+                marginLeft: 15,
                 marginBottom: 5,
                 backgroundColor:"rgb(125, 197, 141)",
+                color: "black",
+                fontSize:"large"
               }}
               variant="contained"
             >

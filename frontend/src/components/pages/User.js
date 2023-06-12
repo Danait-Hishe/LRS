@@ -21,8 +21,8 @@ export default function User() {
       <Navbar />
       <div className="table-wrapper">
         <div className="text-end">
-          <button >
-            <Link to="/create" className="btn">
+          <button  style={{width:'10%',height:'50%',backgroundColor:'rgb(125, 197, 141)',fontSize:'large'}}>
+            <Link to="/create" className="btn" style={{color:'black'}}>
               Register parcel
             </Link>
           </button>
@@ -33,6 +33,21 @@ export default function User() {
               {columns.map((c, i) => (
                 <th key={i}>{c}</th>
               ))}
+              <th>Fullname</th>
+              <th>Current City</th>
+              <th>Subcity</th>
+              <th>Kebele</th>
+              <th>Area</th>
+              <th>Martial Status</th>
+              <th>Gender</th>
+              <th>Service Type</th>
+              <th>Registration Date</th>
+              <th>Land Level</th>
+              <th>North Boundary</th>
+              <th>South Boundary</th>
+              <th>East Boundary</th>
+              <th>West Boundary</th>
+              <th>Parcel Code</th>
               <th>Action</th>
             </tr>
           </thead>

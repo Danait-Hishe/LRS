@@ -35,7 +35,7 @@ function Navbar() {
       <nav className="Navbar">
         <img alt="logo" src={Image} />
         <div className="nav-items">
-          <SearchBar onSearch={handleSearch} />
+          <SearchBar onSearch={handleSearch}  />
           <ul>
             {searchResults.map((parcel) => (
               <li key={parcel._id}>{parcel.fullName}</li>
@@ -46,12 +46,7 @@ function Navbar() {
           <Link>
             <button
               onClick={logOut}
-              sx={{
-                marginRight: 3,
-                marginTop: 2,
-                marginLeft: 50,
-                marginBottom: 5,
-              }}
+              style={{width:'100%',height:'40%',backgroundColor:'rgb(125, 197, 141)',fontSize:'large'}}
               variant="contained"
             >
               Log Out
