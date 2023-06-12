@@ -9,4 +9,4 @@ const UserSchema = new Schema({
     role:{type:String,require:true,default:'user'}
 })
 
-module.exports = mongoose.model('Admin', UserSchema);
+module.exports = mongoose.model('User', UserSchema);

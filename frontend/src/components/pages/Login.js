@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import Image from '../images/logo.jpeg';
 import "./login.css";
 import Admin from "../pages/Admin";
 import User from "../pages/User"
@@ -62,7 +61,6 @@ export default function Login() {
     <div className="login">
       <form onSubmit={handlesubmit}>
         <div className="header">
-          <img src={Image} alt="logo" />
           <a href="/">Home </a>
         </div>
         <div className="form-container1">

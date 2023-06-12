@@ -46,7 +46,6 @@ export default function Appointment() {
       return (
         <div className='appointment' >
             <div className="header">
-          <img src={Image} alt="logo" />
           <a href="/">Home </a>
         </div>
           <form onSubmit={createAppointment} >

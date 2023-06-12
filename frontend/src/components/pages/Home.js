@@ -1,5 +1,4 @@
 import React from "react";
-import Image from '../images/logo.jpeg';
 import "./Home.css";
 import { Link } from "react-router-dom";
 
@@ -7,7 +6,6 @@ export default function Home() {
   return (
     <div className="landing">
       <div className="header">
-        <img src={Image} alt="logo" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
